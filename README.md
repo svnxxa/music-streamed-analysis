@@ -17,9 +17,9 @@ The dataset includes 953 observations with 24 variables related to the character
 The project involves the following analytical steps:
 - Data Wrangling: cleaning, scaling, and transforming the dataset, including converting the `streams` column to a numeric type and applying a log transformation for better visualization.
 > Data Transformation
-> To better analyze the data, I created two versions of the dataset with different transformations applied to the `streams` column:
-> 1. **Scaled Data:** In this version, the `streams` column is scaled by dividing by 1 million to convert the values into millions. This makes the data easier to interpret and visualize without altering the underlying distribution.
-> 2. **Log-Transformed Data:** In the second version, a log transformation is applied to the `streams` column. This transformation is particularly useful for compressing large values, reducing skewness, and making it easier to identify patterns in the data.
+> To better analyze the data, two versions of the dataset with different transformations applied to the `streams` column were created:
+> 1. **Scaled Data:** In this version, the `streams` column was scaled by dividing by 1 million to convert the values into millions. This makes the data easier to interpret and visualize without altering the underlying distribution.
+> 2. **Log-Transformed Data:** In the second version, a log transformation was applied to the `streams` column. This transformation is particularly useful for compressing large values, reducing skewness, and making it easier to identify patterns in the data.
 >
 > Both versions of the dataset are used in different analyses to explore how these transformations impact the results and interpretations.
 
@@ -69,7 +69,7 @@ The analysis reveals that factors such as tempo, energy, or instrumental charact
 
 - **Improvement in Error Metrics**: The log-transformed model shows a substantial reduction in MAE and MSE compared to the normal model. This indicates that the log transformation has improved the model's accuracy and precision in predictions.
 
-- **R<sup>2</sup> Comparison**: Both models have negative R<sup>2</sup> values, implying that neither model captures meaningful variance in the target variable (`streams_million`). The slight improvement in R<sup>2</sup> with log transformations suggests a marginal benefit from applying the transformations, but the overall performance remains poor.
+- **R<sup>2</sup> Comparison**: Both models have negative R<sup>2</sup> values, implying that neither model captures meaningful variance in the target variable (`streams`). The slight improvement in R<sup>2</sup> with log transformations suggests a marginal benefit from applying the transformations, but the overall performance remains poor.
 
 - **Grid Search CV Results**: For both models, Grid Search CV did not yield significant improvements. In the normal model, a high alpha value (100) led to severe regularization, shrinking all coefficients and preventing meaningful predictions. In the log-transformed model, the alpha value (1) also resulted in zero coefficients for all features, indicating that the chosen alpha values were not effective in capturing useful patterns.
 
